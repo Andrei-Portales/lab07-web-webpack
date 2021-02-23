@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/bootstrap";
+
+@keyframes open {
+    0% {opacity: 0; margin-left: -20px}
+    100% {opacity: 1; margin-left: 0px}
+}
+
+.spacer {
+    height: 30px;
+}
+
+.spacer-elenco {
+    height: 50px;
+}
+
+.card {
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 5px 10px #A9A9A9;
+}
+
+h1 {
+    text-align: center;
+}
+
+details[open] summary ~ *{
+    animation: open .5s ease-in-out;
+}
+
+p {
+    text-align: justify;
+}
+
+.animatedItem1 {
+    animation: fadeIn; 
+    animation-duration: 0.7s; 
+}
+
+.animatedItem3 {
+    animation: flipInX; 
+    animation-duration: 0.7s; 
+}
+
