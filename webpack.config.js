@@ -1,28 +1,29 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const RemovePlugin = require("remove-files-webpack-plugin");
 
 module.exports = {
   mode: "production",
+  output: {
+    filename: "[name].[hash].js",
+  },
   entry: { main: "./src/index.js" },
   plugins: [
     new HtmlWebpackPlugin({ template: "./src/template.html" }),
     new MiniCssExtractPlugin({
       filename: "[name].[hash].css",
     }),
+    new RemovePlugin({
+      before: {
+        include: ["./dist"],
+      },
+    }),
   ],
   module: {
     rules: [
-      /*{
+      {
         test: /\.s[ac]ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },*/
-      {
-        test:/\.s[ac]ss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {

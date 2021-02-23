@@ -41,40 +41,58 @@ const changeView = (index) => {
 
 const navBarF = (index) => {
   const navBar = document.getElementById("nav-bar");
-  navBar.innerHTML = 
-  `
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand">The Walking Dead</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav" id="list_navbar">
-          </div>
+  navBar.innerHTML = `
+  <div class="pos-f-t">
+    
+    <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand">The Walking Dead</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="drop-down-menu">
+        <div class="navbar-nav" id="list_navbar">
+            
         </div>
       </div>
-    </nav>
-    
+    </div>
+  </div>
+
+
   `;
 
 
-  const list = document.getElementById('list_navbar');
-  list.innerHTML = '';
-//<a class="nav-link active" aria-current="page" href="#">Home</a>
-  for (let i = 0; i < data.length; i++) {
-   
-    const button = document.createElement("a");
-    button.style.userSelect = "none";
-    button.textContent = data[i];
-    button.className = index === i ? "nav-link active" : "nav-link";
+  const classes = [
+    "nav-bar-item--home",
+    "nav-bar-item--elenco",
+    "nav-bar-item--resumen",
+    "nav-bar-item--produccion",
+    "nav-bar-item--lanzamiento",
+    "nav-bar-item--recepcion",
+  ];
 
-    button.addEventListener("click", () => navBarF(i));
+  const list = document.getElementById("list_navbar");
+  if (list !== null) {
+    list.innerHTML = "";
 
-    list.appendChild(button);
+    for (let i = 0; i < data.length; i++) {
+      const button = document.createElement("a");
+      button.style.userSelect = "none";
+      button.textContent = data[i];
+      button.className = classes[i];
+
+      button.addEventListener("click", () => navBarF(i));
+
+      list.appendChild(button);
+      /*const hr = document.createElement('hr');
+      hr.className = 'divider';
+      list.appendChild(hr);*/
+    }
+
+    changeView(index);
   }
-
-  changeView(index);
 };
 
 export default navBarF;

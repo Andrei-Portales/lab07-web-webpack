@@ -41,3 +41,85 @@ p {
     animation-duration: 0.7s; 
 }
 
+.nav-bar-item-a {
+    margin-top: 5px;
+    font-size: 1.2rem;
+    color: white;
+    outline: none;
+    text-decoration: none;
+
+    &::before {
+        content: '';
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        color: white;
+    }
+
+    &:hover{
+        color: #B6B5B5;
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+.nav-bar-item--home {
+    @extend .nav-bar-item-a;
+
+    &::before {
+        content: '🏠';
+    }
+}
+
+.nav-bar-item--elenco {
+    @extend .nav-bar-item-a;
+
+    &::before {
+        content: '👨‍👨‍👦';
+    }
+}
+
+.nav-bar-item--resumen {
+    @extend .nav-bar-item-a;
+
+    &::before {
+        content: '📃';
+    }
+}
+
+.nav-bar-item--produccion {
+    @extend .nav-bar-item-a;
+
+    &::before {
+        content: '⌚';
+    }
+}
+
+.nav-bar-item--lanzamiento {
+    @extend .nav-bar-item-a;
+
+    &::before {
+        content: '🤳';
+    }
+}
+
+.nav-bar-item--recepcion {
+    @extend .nav-bar-item-a;
+
+    &::before {
+        content: '🎣';
+    }
+}
+
+.drop-down-menu {
+    padding: 20px;
+    background-color: #383c44;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+
+
+
+

@@ -10,8 +10,6 @@ const home = () => {
   
   <img src="${img}" class="rounded mx-auto d-block" alt="Imagen de serie" width="300" height="200" class="card">
 
-   
-
   <div class="card">
   <h1>The Walking Dead</h1>
       <p>
