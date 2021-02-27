@@ -1,3 +1,4 @@
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const RemovePlugin = require("remove-files-webpack-plugin");
@@ -5,9 +6,12 @@ const RemovePlugin = require("remove-files-webpack-plugin");
 module.exports = {
   mode: "production",
   output: {
+    path: path.resolve(__dirname, "dist"),
     filename: "[name].[hash].js",
   },
-  entry: { main: "./src/index.js" },
+  entry: {
+    main: "./src/index.js",
+  },
   plugins: [
     new HtmlWebpackPlugin({ template: "./src/template.html" }),
     new MiniCssExtractPlugin({
