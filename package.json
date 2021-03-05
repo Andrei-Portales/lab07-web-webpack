@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
+    "build-babel": "babel src --out-dir lib",
     "start": "webpack serve --config webpack.dev.js --open"
   },
   "repository": {
@@ -20,6 +21,11 @@
   },
   "homepage": "https://github.com/Andrei-Portales/lab07-web-webpack#readme",
   "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-transform-arrow-functions": "^7.13.0",
+    "@babel/preset-env": "^7.13.9",
+    "babel-loader": "^8.2.2",
     "bootstrap": "^4.6.0",
     "css-loader": "^5.0.2",
     "file-loader": "^6.2.0",
@@ -36,6 +42,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "animate.css": "^4.1.1"
+    "@babel/polyfill": "^7.12.1",
+    "animate.css": "^4.1.1",
+    "core-js": "^3.9.1"
   }
 }

@@ -33,6 +33,7 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
+     
       {
         test: /\.(svg|png|jpg|gif|jpeg)$/,
         use: {
@@ -52,6 +53,11 @@ module.exports = {
             outputPath: "assets/audio",
           },
         },
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
       },
     ],
   },

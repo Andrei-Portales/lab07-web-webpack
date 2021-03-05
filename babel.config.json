@@ -1,0 +1,14 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "corejs": 3.9,
+                "useBuiltIns": "usage"
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-transform-arrow-functions"
+    ]
+}
